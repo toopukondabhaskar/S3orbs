@@ -1,0 +1,27 @@
+version: 2.1
+parameters:
+  from:
+    type: string
+    description: A local *directory* path to sync with S3
+  to:
+    type: string
+    description: 'A URI to an S3 bucket, i.e. ''s3://the-name-my-bucket'''
+  arguments:
+    description: >-
+      If you wish to pass any additional arguments to the aws sync command (i.e.
+      --acl public-read)
+    type: string
+    default: ''
+  overwrite:
+    default: false
+    type: boolean
+steps:
+  - aws-cli/install
+  - aws-cli/configure
+  - deploy:
+      name: Deploy to S3
+      command: >-
+        aws s3 sync << parameters.from >> << parameters.to >><<#
+        parameters.arguments >> << parameters.arguments
+        >><</parameters.arguments >><<# parameters.overwrite >> --delete<</
+        parameters.overwrite >>
