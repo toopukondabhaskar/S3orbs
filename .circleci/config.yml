@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  aws-s3: mynamespace/hello
+  aws-s3: mynamespace/aws
 jobs:
   build:
     docker:
