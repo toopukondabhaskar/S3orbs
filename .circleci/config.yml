@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  aws-s3: mynamespace/aws
+  mynamespace-aws: mynamespace/bhaskar-aws
 jobs:
   build:
     docker:
@@ -18,4 +18,4 @@ jobs:
       - aws-s3/copy:
           from: bucket/build_asset.txt
           to: 's3://my-s3-bucket-name'
-          arguments: '--dryrun'
+arguments: '--dryrun'
