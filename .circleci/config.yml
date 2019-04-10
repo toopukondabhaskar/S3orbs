@@ -18,4 +18,9 @@ jobs:
       - aws-s3/copy:
           from: bucket/build_asset.txt
           to: 's3://my-s3-bucket-name'
-arguments: '--dryrun'
+          arguments: '--dryrun'
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - Build 
