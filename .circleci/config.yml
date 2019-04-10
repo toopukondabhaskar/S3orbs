@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  mynamespace-aws: mynamespace/bhaskar-aws
+  mynamespace-aws: mynamespace/mynamespace-aws@0.0.1
 jobs:
   build:
     docker:
